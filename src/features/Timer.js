@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import { Countdown } from '../components/Countdown';
 import { RoundedButton } from '../components/RoundedButton';
+import { spacing } from '../utils/sizes';
+import { colors } from '../utils/colors';
 
 export const Timer = ({ focusSubject }) => {
   const [isStarted, setIsStarted] = useState(false);
@@ -13,6 +15,10 @@ export const Timer = ({ focusSubject }) => {
           onProgress={() => {}}
           onEnd={() => {}}
         />
+        <View style={{ paddingTop: spacing.xxl }}>
+          <Text style={styles.title}>Focussing on:</Text>
+          <Text style={styles.task}>{focusSubject}</Text>
+        </View>
       </View>
       <View style={styles.buttonWrapper}>
         {!isStarted && (
@@ -41,5 +47,14 @@ const styles = StyleSheet.create({
     padding: 15,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  title: {
+    color: colors.white,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  task: {
+    color: colors.white,
+    textAlign: 'center',
   },
 });
