@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, SafeAreaView, Platform, StatusBar} from 'react-
 import Constants from 'expo-constants';
 import {colors} from './src/utils/colors';
 import { Focus } from './src/features/focus';
+import { Timer } from './src/features/Timer';
 
 
 export default function App() {
@@ -12,11 +13,12 @@ export default function App() {
       {!currentSubject ? (
         <Focus addSubject={setCurrentSubject}/>
       ):(
-        <View>
-          <Text style={{color:colors.white}}> 
-            I am going to render the timer for {currentSubject}
-          </Text>
-        </View>
+        <Timer
+          focusSubject={currentSubject}
+          onTimerEnd={() => {}}
+          clearSubject={() => {}}
+
+        />
       )}
         
     </SafeAreaView>
