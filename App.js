@@ -4,6 +4,7 @@ import Constants from 'expo-constants';
 import {colors} from './src/utils/colors';
 import { Focus } from './src/features/focus';
 
+
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
@@ -20,3 +21,4 @@ const styles = StyleSheet.create({
   }
 }
 );
+
