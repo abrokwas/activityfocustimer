@@ -29,7 +29,7 @@ export const Countdown = ({ minutes = 0.1, isPaused, onProgress, onEnd }) => {
 
   useEffect(() => {
     onProgress(millis / minutesToMillis(minutes));
-  }, [minutes]);
+  }, [millis]);
 
   useEffect(() => {
     if (isPaused) {
